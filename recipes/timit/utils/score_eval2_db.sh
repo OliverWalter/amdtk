@@ -26,7 +26,7 @@ if [ ! -e "$out_dir"/.done ]; then
       --options "$parallel_opts" \
       "score-eval2" \
       "${out_dir}/score.list" \
-      "$PWD/utils/score_eval2.sh $setup \$ITEM1 $out_dir $segments_filename" \
+      "$root/utils/score_eval2.sh $setup \$ITEM1 $out_dir $segments_filename" \
       "$out_dir" || exit 1
 
     date > "$out_dir"/.done

@@ -10,13 +10,13 @@ import pickle
 import amdtk
 
 
-def main():
+def main(script_args=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('model', help='model to fit on the data')
     parser.add_argument('best_path', help='input best path file')
     parser.add_argument('feats', help='features file')
     parser.add_argument('out', help='accumulated statistics')
-    args = parser.parse_args()
+    args = parser.parse_args(script_args)
 
     # Load the model.
     with open(args.model, 'rb') as f:
@@ -40,5 +40,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-else:
-    raise ImportError('this script cannot be imported')
