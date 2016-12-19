@@ -70,6 +70,10 @@ if [ ! -e "$amdtk_root/tools/logsumexp" ]; then
     cd "$amdtk_root"
 fi || exit 1
 
+# Compile hmm graph utils
+echo "Compiling hmm graph utils... "
+python setup_hmm_graph_utils.py build_ext --inplace || exit 1
+
 # Download and install sph2pipe. This is needed for features extraction.
 echo "Installing sph2pipe... "
 if [ ! -e $amdtk_root/tools/sph2pipe_v2.5.tar.gz ]; then    
